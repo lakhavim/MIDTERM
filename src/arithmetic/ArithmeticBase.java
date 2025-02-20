@@ -17,4 +17,11 @@ public class ArithmeticBase {
     public double calculate(double x, double y, Operation operation) {
         return OperationExecutor.apply(x, y, operation);
     }
+
+    public void printAllResults(double x, double y) {
+        for (Operation op : Operation.values()) {
+            double result = calculate(x, y, op);
+            System.out.println(op + ": " + result);
+        }
+    }
 }

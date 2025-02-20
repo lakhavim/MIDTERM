@@ -17,25 +17,11 @@ import java.util.Scanner;
  */
 public class Arithmetic {
     public static void main(String[] args) {
-        Scanner in = new Scanner(System.in);
+        double x = 10; // Example first number
+        double y = 5;  // Example second number
 
-        System.out.print("Enter first number: ");
-        double n = in.nextDouble();
-
-        System.out.print("Enter second number: ");
-        double m = in.nextDouble();
-
-        System.out.print("Enter operation (PLUS, MINUS, TIMES, DIVIDE): ");
-        String opInput = in.next().toUpperCase();
-
-        try {
-            Operation operation = Operation.valueOf(opInput);
-            ArithmeticBase r = new ArithmeticBase();
-            double result = r.calculate(n, m, operation);
-            System.out.println("Result: " + result);
-        } catch (IllegalArgumentException e) {
-            System.out.println("Invalid operation entered. Please use PLUS, MINUS, TIMES, or DIVIDE.");
-        }
+        ArithmeticBase calculator = new ArithmeticBase();
+        System.out.println("Results for all operations:");
+        calculator.printAllResults(x, y);
     }
 }
-
